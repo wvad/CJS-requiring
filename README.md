@@ -13,7 +13,7 @@
 成功したらそれを返し、失敗したら Module オブジェクトを生成し Module#load を呼び出します。[822行目](https://github.com/nodejs/node/blob/ccb8aae3932c13f33622203b2ffc5a33120e9d40/lib/internal/modules/cjs/loader.js#L822)
 
 ## Module#load(filename) [internal/modules/cjs/loader.js:963](https://github.com/nodejs/node/blob/ccb8aae3932c13f33622203b2ffc5a33120e9d40/lib/internal/modules/cjs/loader.js#L963)
-- 拡張子が `.mjs` ならエラーを送出します。
+- 対象が ESModule (mjsファイルなど) ならエラーを送出します。
 - 対象のファイルが  
 .js なら Module._extensions\[".js"\] を、  
 .json なら Module._extensions\[".json"\] を、  
