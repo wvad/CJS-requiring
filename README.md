@@ -9,8 +9,9 @@
 ## Module._load(request, parent, isMain) [internal/modules/cjs/loader.js:757](https://github.com/nodejs/node/blob/ccb8aae3932c13f33622203b2ffc5a33120e9d40/lib/internal/modules/cjs/loader.js#L757)
 - モジュールがキャッシュされていてロード済みの場合はそれを返します。
 - 名前が node: から始まる場合は、必ずビルトインモジュールをロードします。
-- そうでない場合は、ビルトインモジュールのロードを試行します。  
-成功したらそれを返し、失敗したら Module オブジェクトを生成し Module#load を呼び出します。[822行目](https://github.com/nodejs/node/blob/ccb8aae3932c13f33622203b2ffc5a33120e9d40/lib/internal/modules/cjs/loader.js#L822)
+- そうでない場合でも、まずはビルトインモジュールのロードを試行します。  
+成功したらそのビルトインモジュールを返しますが、
+失敗したら Module オブジェクトを生成し Module#load を呼び出します。[822行目](https://github.com/nodejs/node/blob/ccb8aae3932c13f33622203b2ffc5a33120e9d40/lib/internal/modules/cjs/loader.js#L822)
 
 ## Module#load(filename) [internal/modules/cjs/loader.js:963](https://github.com/nodejs/node/blob/ccb8aae3932c13f33622203b2ffc5a33120e9d40/lib/internal/modules/cjs/loader.js#L963)
 - 対象が ESModule (mjsファイルなど) ならエラーを送出します。
